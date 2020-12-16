@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="true"
+    android:orientation="horizontal"
+    tools:context="com.example.tarea3davidcacherofragments.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
+        <FrameLayout
+            android:id="@+id/frameLayoutFragmentLista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#BDE0F3">
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/frameLayoutProf"
+            android:layout_width="match_parent"
+            android:layout_height="325dp"
+            android:layout_weight="50"
+            android:background="#BDE0F3" />
+
+        <FrameLayout
+            android:id="@+id/frameLayoutFragmentLFicha"
+            android:layout_width="match_parent"
+            android:layout_height="411dp"
+            android:layout_weight="50"
+            android:background="#BDE0F3">
+
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

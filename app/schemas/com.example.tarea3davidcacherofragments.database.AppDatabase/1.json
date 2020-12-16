@@ -1,0 +1,152 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "71519fb9406f660858ec6e5dca1a8d43",
+    "entities": [
+      {
+        "tableName": "Subjects",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, PRIMARY KEY(`nombre`))",
+        "fields": [
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "nombre"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Teachers",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ProfId` INTEGER NOT NULL, `NombreProf` TEXT NOT NULL, `ApellidoProf` TEXT NOT NULL, PRIMARY KEY(`ProfId`))",
+        "fields": [
+          {
+            "fieldPath": "ProfId",
+            "columnName": "ProfId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "NombreProf",
+            "columnName": "NombreProf",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ApellidoProf",
+            "columnName": "ApellidoProf",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ProfId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Students",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AlumnId` INTEGER NOT NULL, `NombreAlumn` TEXT NOT NULL, `ApellidoAlumn` TEXT NOT NULL, PRIMARY KEY(`AlumnId`))",
+        "fields": [
+          {
+            "fieldPath": "AlumnId",
+            "columnName": "AlumnId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "NombreAlumn",
+            "columnName": "NombreAlumn",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ApellidoAlumn",
+            "columnName": "ApellidoAlumn",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AlumnId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "AsigAlumCrossRef",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, `AlumnId` INTEGER NOT NULL, PRIMARY KEY(`nombre`, `AlumnId`))",
+        "fields": [
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "AlumnId",
+            "columnName": "AlumnId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "nombre",
+            "AlumnId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "AsigProfCrossRef",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, `ProfId` INTEGER NOT NULL, PRIMARY KEY(`nombre`, `ProfId`))",
+        "fields": [
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ProfId",
+            "columnName": "ProfId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "nombre",
+            "ProfId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '71519fb9406f660858ec6e5dca1a8d43')"
+    ]
+  }
+}
